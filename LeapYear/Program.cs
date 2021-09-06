@@ -2,7 +2,10 @@
 
 namespace LeapYear
 {
-    public class LeapYear
+    class LeapYear
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }
