@@ -18,5 +18,10 @@ namespace LeapYear
                 return true;
             return false;
         }
+
+        public static void InteractiveLeapCalander()
+        {
+
+        }
     }
 }
