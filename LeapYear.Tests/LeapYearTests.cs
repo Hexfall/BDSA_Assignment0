@@ -47,7 +47,7 @@ namespace LeapYear.Tests
             Console.SetOut(writer);
             LeapYear.InteractiveLeapCalander();
 
-            string expectedOutput = "Input year to check (or \'q\' to exit):";
+            string expectedOutput = "Input year to check (or \'q\' to exit):\r\n";
             foreach (var y in leapYears)
                 expectedOutput += "yay\r\n";
             foreach (var y in nonLeapYears)
