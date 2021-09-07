@@ -36,10 +36,10 @@ namespace LeapYear.Tests
         {
             var inputString = "";
             foreach (var y in leapYears)
-                inputString += y.ToString() + "\r\n";
+                inputString += y.ToString() + Environment.NewLine.ToString();
             foreach (var y in nonLeapYears)
-                inputString += y.ToString() + "\r\n";
-            inputString += "q\r\n";
+                inputString += y.ToString() + Environment.NewLine.ToString();
+            inputString += $"q{Environment.NewLine}";
 
             var reader = new StringReader(inputString);
             var writer = new StringWriter();
@@ -47,11 +47,11 @@ namespace LeapYear.Tests
             Console.SetOut(writer);
             LeapYear.InteractiveLeapCalander();
 
-            string expectedOutput = "Input year to check (or \'q\' to exit):\r\n";
+            string expectedOutput = $"Input year to check (or \'q\' to exit):{Environment.NewLine}";
             foreach (var y in leapYears)
-                expectedOutput += "yay\r\n";
+                expectedOutput += $"yay{Environment.NewLine}";
             foreach (var y in nonLeapYears)
-                expectedOutput += "nay\r\n";
+                expectedOutput += $"nay{Environment.NewLine}";
             string actualOutput = writer.GetStringBuilder().ToString();
             Assert.Equal(expectedOutput, actualOutput);
         }
