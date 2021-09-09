@@ -128,7 +128,7 @@ namespace LeapYear.Tests
 
 
             string expectedOutput = $"Input year to check (or \'q\' to exit):{Environment.NewLine}";
-            expectedOutput += $"The year 0 AD does not exist. The Gregorian calendar goes from 1BC to 1AD{Environment.NewLine}";
+            expectedOutput += $"The year 0 AD does not exist. The Gregorian calendar goes from 1 BC to 1 AD{Environment.NewLine}";
             Assert.Equal(expectedOutput, actualOutput);
         }
     }
