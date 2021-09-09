@@ -43,6 +43,10 @@ namespace LeapYear
                 {
                     Console.WriteLine("The year 0 AD does not exist. The Gregorian calendar goes from 1 BC to 1 AD");
                 }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Input must be a whole number");
+                }
                 input = Console.ReadLine().Trim();
             }
         }
