@@ -11,6 +11,8 @@ namespace LeapYear
 
         public static bool IsLeapYear(int year)
         {
+            if (year < 1582)
+                throw new ArgumentOutOfRangeException("Does not apply to years before 1582.");
             if (year % 400 == 0)
                 return true;
             if (year % 100 == 0)
