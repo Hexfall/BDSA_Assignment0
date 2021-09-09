@@ -15,6 +15,7 @@ namespace LeapYear
                 throw new ArgumentNullException("0 AD does not exist");
             if (year < 1582)
                 throw new ArgumentOutOfRangeException("Does not apply to years before 1582.");
+            //return year % 400 == 0 || year % 4 == 0 ^ year % 100 == 0; // One-liner.
             if (year % 400 == 0)
                 return true;
             if (year % 100 == 0)
