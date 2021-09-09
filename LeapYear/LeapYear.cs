@@ -9,6 +9,9 @@ namespace LeapYear
             InteractiveLeapCalander();
         }
 
+        /* 
+         * Returns whether a year is a leap year or not, in accordance with the Gregorian calendar.
+         */
         public static bool IsLeapYear(int year)
         {
             if (year == 0)
@@ -25,10 +28,15 @@ namespace LeapYear
             return false;
         }
 
+        /* 
+         * Interactive console interface. Takes in input through the console and prints whether it's a leap year.
+         */
         public static void InteractiveLeapCalander()
         {
+            // Set-up
             Console.WriteLine("Input year to check (or \'q\' to exit):");
             string input = Console.ReadLine().Trim();
+
             while (!(input == "q"))
             {
                 try
