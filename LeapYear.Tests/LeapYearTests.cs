@@ -131,5 +131,23 @@ namespace LeapYear.Tests
             expectedOutput += $"The year 0 AD does not exist. The Gregorian calendar goes from 1 BC to 1 AD{Environment.NewLine}";
             Assert.Equal(expectedOutput, actualOutput);
         }
+
+        [Fact]
+        public void Catches_Non_Numbers_And_Responds_Accordingly()
+        {
+            string inputString = "Not a number" + Environment.NewLine + "q" + Environment.NewLine;
+            var reader = new StringReader(inputString);
+            var writer = new StringWriter();
+
+            Console.SetIn(reader);
+            Console.SetOut(writer);
+            LeapYear.InteractiveLeapCalander();
+            string actualOutput = writer.GetStringBuilder().ToString();
+
+
+            string expectedOutput = $"Input year to check (or \'q\' to exit):{Environment.NewLine}";
+            expectedOutput += $"Input must be a whole number{Environment.NewLine}";
+            Assert.Equal(expectedOutput, actualOutput);
+        }
     }
 }
