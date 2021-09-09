@@ -28,9 +28,15 @@ namespace LeapYear
             string input = Console.ReadLine().Trim();
             while (!(input == "q"))
             {
-                var num = int.Parse(input);
-                Console.WriteLine(IsLeapYear(num) ? "yay" : "nay");
-
+                try
+                {
+                    var num = int.Parse(input);
+                    Console.WriteLine(IsLeapYear(num) ? "yay" : "nay");
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("1582 marks the introduction of the Gregorian calendar, so dates before then are invalid");
+                }
                 input = Console.ReadLine().Trim();
             }
         }
